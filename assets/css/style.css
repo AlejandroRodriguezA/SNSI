@@ -58,6 +58,19 @@ body {
   left: 200px;     
 }
 
+.titulo h1 {
+  font-size:60px;
+}
+
+.titulo h2 span {
+  color:#030303;
+  font-size:120%;
+}
+
+.titulo h2 {
+
+}
+
 /* Add a black background color to the top navigation */
 .topnav {
     background-color: transparent;
