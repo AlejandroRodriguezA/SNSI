@@ -23,7 +23,7 @@ body {
 
 .contenedor {
   height: 100vh;
-  width: 100%;
+  width: device-width;
   margin:auto;
   
 }
@@ -31,7 +31,7 @@ body {
 .section {
   background: none;
   height:100vh;
-  width: 100%;
+  width:device-width;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -49,6 +49,7 @@ body {
   background-color: transparent;
   color:#ffffff;
   width: 100%;
+  flex-shrink:1;
   
 }
 
@@ -67,9 +68,6 @@ body {
   font-size:120%;
 }
 
-.titulo h2 {
-
-}
 
 /* Add a black background color to the top navigation */
 .topnav {
@@ -116,10 +114,26 @@ body {
 
   /* When the screen is less than 600 pixels wide, hide all links, except for the first one ("Home"). Show the link that contains should open and close the topnav (.icon) */
 @media screen and (max-width: 600px) {
-    .topnav a:not(:first-child) {display: none;}
+    .topnav a {
+      left:0;
+      display:none;}
+    /* .topnav a:not(:first-child) {display: none;} */
     .topnav a.icon {
       float: right;
       display: block;
+    }
+
+    .section {
+      display: flex;
+      flex-direction:column-reverse;
+      justify-content: center;
+      position: absolute;
+    
+      animation: Inicio 4s;
+      
+    }
+    .titulo h1,h2 {
+      left: 0px; 
     }
   }
   
@@ -156,6 +170,7 @@ body {
 @media screen and (max-width: 600px) {
     #gif {
         width: device-width;
+        height:100%;
         object-fit: cover;
        
         
