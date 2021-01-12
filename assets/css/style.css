@@ -1,43 +1,29 @@
 * {
   font-family: 'Xanh Mono', monospace;
+  overflow: hidden;
 }
-body {
-    margin: 0;
-    height: 100vh;
-    width: device-width;
-    background-color: #040404;
-    
-}
-/* body::before {
-    content: "";
-    position: fixed;
-    background: #051d69  right no-repeat;
-    // background-image: url(../img/burbujasUnder.gif); 
-    background-size: cover;
-    left: 0;
-    right: 0;
-    top: 0;
-    height: 100vh;
-    z-index: -1;
-  } */
 
+
+  
 .contenedor {
-  height: 100vh;
-  width: device-width;
-  margin:auto;
+  height: 100vmax;
+  width: 100vmax;
+  
   
 }
 
 .section {
   background: none;
   height:100vh;
-  width:device-width;
+  width:100%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content:center;
   position: absolute;
+  margin-top: 10%;
 
   animation: Inicio 4s;
+  animation-delay: .2s;
   
 }
 
@@ -48,24 +34,38 @@ body {
 .titulo {
   background-color: transparent;
   color:#ffffff;
-  width: 100%;
-  flex-shrink:1;
+  width:100%;
+  
   
 }
 
-.titulo h1,h2 {
+.titulo h1 {
+  font-size:50px;
+  line-height: 1;
+  font-weight: 700;
   position:relative;
-  margin: 20px;
-  left: 200px;     
+  margin: 0.4em; /* 20px */
+  left: 2em; /* 100px */
+
+
 }
 
-.titulo h1 {
-  font-size:60px;
+
+.titulo h2 {
+  font-size:20px;
+  position:relative;
+  margin: 1em; /* 20px */
+  left: 5em; /* 100px */
+  
+ 
+      
 }
+
 
 .titulo h2 span {
   color:#030303;
-  font-size:120%;
+  font-size:130%;
+  text-decoration: underline;
 }
 
 
@@ -81,13 +81,17 @@ body {
   .topnav a {
     float: left;
     display: block;
+    font-size: 20px;
     color: #f2f2f2;
     text-align: center;
-    padding: 14px 16px;
+    padding: 1em 1em; /* 15px 20px*/
+    width: 100px;
     text-decoration: none;
-    font-size: 17px;
+    
     position: relative;
-    left: 200px;  
+    left: 5em;  /* 200px */
+
+   
   }
 
   /* .topnav a#LogIn  {
@@ -112,29 +116,52 @@ body {
     display: none;
   }
 
-  /* When the screen is less than 600 pixels wide, hide all links, except for the first one ("Home"). Show the link that contains should open and close the topnav (.icon) */
+  /* When the screen is less than 600 pixels wide, hide all links. Show the link that contains should open and close the topnav (.icon) */
 @media screen and (max-width: 600px) {
     .topnav a {
       left:0;
       display:none;}
     /* .topnav a:not(:first-child) {display: none;} */
     .topnav a.icon {
-      float: right;
+      
       display: block;
+      font-size:36px;
+      width:100vw;
+      text-align:right;
+      background-color: #010255;
+    }
+
+    .topnav a.icon:hover {
+      background-color: #010255;
+    }
+
+    .topnav {
+      position: fixed;
+      top:0;
     }
 
     .section {
       display: flex;
       flex-direction:column-reverse;
-      justify-content: center;
+      justify-content: flex-end;
       position: absolute;
-    
+      top:80px;
       animation: Inicio 4s;
       
     }
-    .titulo h1,h2 {
+    .titulo h1 {
       left: 0px; 
+      font-size: 40px;
+      text-align: center;
     }
+
+    .titulo h2 {
+      left: 0px; 
+      font-size: 15px;
+      text-align: center;
+    }
+
+    
   }
   
   /* The "responsive" class is added to the topnav with JavaScript when the user clicks on the icon. This class makes the topnav look good on small screens (display the links vertically instead of horizontally) */
@@ -142,48 +169,55 @@ body {
     .topnav.responsive {
         position: fixed;
         top:0;
+        height:500px;
     }
     .topnav.responsive a.icon {
       position: absolute;
       right: 0;
-      top: 0;
+      top: 0px;
     }
     .topnav.responsive a {
       float: none;
       display: block;
       text-align: left;
+      top:126px;
+      width: auto;
     }
+   
     .topnav.responsive a#LogIn{
         float: none;
+    }
+    .titulo.responsive h1 {
+      display: none;
+ 
+    }
+    .titulo.responsive h2 {
+      display: none;
     }
   }
 
   /* adjusting the image */
 
 #gif {
-    width:100vw;
-    height:100vh;
-    object-fit: cover;
+  width: device-width;
+  height:100%;
+  object-fit: cover;
 
 }
 
 @media screen and (max-width: 600px) {
-    #gif {
-        width: device-width;
-        height:100%;
-        object-fit: cover;
-       
-        
-    }
+    
 }
 
 @keyframes Inicio {
   0% {
       top:100%;
+      left: 20%;
 
   }
   100% {
-      top:0;
+      top:80px;
+      left: 0;
 
   }
 }
